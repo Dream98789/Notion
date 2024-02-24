@@ -14,18 +14,19 @@
     animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
   }  
   .circle {
-            width: 450px;
-            height: 450px;
-            background-color: #ffc0cb;
-            border-radius: 50%;
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse 2s infinite alternate;
-            z-index: -1;
-        }
- @keyframes changeBackground {
+    width: 450px;
+    height: 450px;
+    background-color: #ffc0cb;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes changeBackground {
     0%, 5% {
         background-color: #990000; /* 深紅色 */
     }
@@ -62,23 +63,25 @@
 }
 
 
-  .animated-text {
+.animated-text {
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
     animation: animateText 1s ease-in-out infinite alternate;
     margin-left: 6px;
-  }
+    position: relative; /* 確保文字的 z-index 比圓圈的 z-index 更高 */
+    z-index: 1; /* 確保文字的 z-index 比圓圈的 z-index 更高 */
+}
 
-  @keyframes animateText {
+@keyframes animateText {
     0% {
       transform: scale(1);
     }
     100% {
       transform: scale(2);
     }
-  }
+}
 </style>
 </head>
 <body>
