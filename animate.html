@@ -18,9 +18,11 @@
     100% { background-position: 100% 50%; }
   }
 
-  .animated-text span {
-    display: inline-block;
-    opacity: 0;
+  .animated-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .animated-text span:nth-child(1) { animation: gather1 2s ease-in-out forwards; }
