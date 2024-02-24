@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animated Page</title>
+<title>Fancy Animated Text</title>
 <style>
   body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(to right, red, orange, green, blue, indigo, violet);
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     animation: rainbow 10s linear infinite alternate;
   }
 
@@ -25,21 +25,16 @@
     margin-top: 20%;
     font-size: 3em;
     animation: bounce 2s infinite;
+    animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   }
 
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
-  }
-
-  .bounce-img {
-    display: block;
-    margin: 0 auto;
-    animation: bounce 2s infinite;
+    50% { transform: translateY(-30px) rotateX(20deg) rotateY(20deg); }
   }
 </style>
 </head>
 <body>
-  <h1>歡迎來到 Dreamaker!</h1>
+  <h1>Welcome to Animated Page!</h1>
 </body>
 </html>
