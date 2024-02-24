@@ -3,52 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome to Dreamaker</title>
+<title>Text Animation</title>
 <style>
   body {
     margin: 0;
-    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333; /* 更改背景顏色 */
-    color: #fff; /* 更改文字顏色 */
+    background-color: #f0f0f0;
     overflow: hidden;
-    font-size: 48px;
+  }
+  .animation-container {
+    position: relative;
+    font-size: 24px;
     font-family: Arial, sans-serif;
   }
-
-  .text {
+  .animated-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
     opacity: 0;
-    animation: fadeIn 2s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes move {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-    50% {
-      transform: translate(-50%, -50%) rotate(180deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
   }
 </style>
 </head>
 <body>
-<div class="text" style="animation: move 3s ease-in-out infinite;">
-  Welcome to Dreamaker
+<div class="animation-container" id="animation-container">
+  <span class="animated-text">W</span>
+  <span class="animated-text">e</span>
+  <span class="animated-text">l</span>
+  <span class="animated-text">c</span>
+  <span class="animated-text">o</span>
+  <span class="animated-text">m</span>
+  <span class="animated-text"> </span>
+  <span class="animated-text">t</span>
+  <span class="animated-text">o</span>
+  <span class="animated-text"> </span>
+  <span class="animated-text">D</span>
+  <span class="animated-text">r</span>
+  <span class="animated-text">e</span>
+  <span class="animated-text">a</span>
+  <span class="animated-text">m</span>
+  <span class="animated-text">a</span>
+  <span class="animated-text">k</span>
+  <span class="animated-text">e</span>
+  <span class="animated-text">r</span>
+  <span class="animated-text"> </span>
+  <span class="animated-text">!</span>
 </div>
+
+<script>
+  const animatedTexts = document.querySelectorAll('.animated-text');
+
+  animatedTexts.forEach(text => {
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    const endX = (window.innerWidth / 2) - text.offsetWidth / 2;
+    const endY = (window.innerHeight / 2) - text.offsetHeight / 2;
+
+    text.style.transform = `translate(${startX}px, ${startY}px)`;
+
+    setTimeout(() => {
+      text.style.opacity = 1;
+      text.style.transition = 'transform 1s ease, opacity 1s ease';
+      text.style.transform = `translate(${endX}px, ${endY}px)`;
+    }, 100);
+  });
+</script>
 </body>
 </html>
