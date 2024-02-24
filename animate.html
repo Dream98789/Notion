@@ -11,17 +11,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
+    animation: changeBackground 5s linear infinite alternate; /* 添加背景色漸變動畫 */
   }  
   @keyframes changeBackground {
     0% {
         background-color: #ff0000; /* 紅色 */
     }
+    25% {
+        background-color: #ffcc00; /* 橙色 */
+    }
     50% {
         background-color: #00ff00; /* 綠色 */
     }
+    75% {
+        background-color: #0066ff; /* 藍色 */
+    }
     100% {
-        background-color: #0000ff; /* 藍色 */
+        background-color: #ff00ff; /* 紫色 */
     }
 }
   .animated-text {
