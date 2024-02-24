@@ -11,8 +11,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
+    animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
+  }  
+  @keyframes changeBackground {
+    0% {
+        background-color: #ff0000; /* 紅色 */
+    }
+    50% {
+        background-color: #00ff00; /* 綠色 */
+    }
+    100% {
+        background-color: #0000ff; /* 藍色 */
+    }
+}
   .animated-text {
     font-size: 36px;
     font-weight: bold;
