@@ -7,6 +7,7 @@
 <style>
   body {
     margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,63 +15,37 @@
     background-color: #f0f0f0;
     overflow: hidden;
   }
-  .animation-container {
+
+  .container {
     position: relative;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 36px;
   }
-  .animated-text {
+
+  .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    white-space: nowrap;
     opacity: 0;
+    animation: move 2s ease forwards;
+  }
+
+  @keyframes move {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-100vw) translateY(-100vh);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
   }
 </style>
 </head>
 <body>
-<div class="animation-container" id="animation-container">
-  <span class="animated-text">W</span>
-  <span class="animated-text">e</span>
-  <span class="animated-text">l</span>
-  <span class="animated-text">c</span>
-  <span class="animated-text">o</span>
-  <span class="animated-text">m</span>
-  <span class="animated-text"> </span>
-  <span class="animated-text">t</span>
-  <span class="animated-text">o</span>
-  <span class="animated-text"> </span>
-  <span class="animated-text">D</span>
-  <span class="animated-text">r</span>
-  <span class="animated-text">e</span>
-  <span class="animated-text">a</span>
-  <span class="animated-text">m</span>
-  <span class="animated-text">a</span>
-  <span class="animated-text">k</span>
-  <span class="animated-text">e</span>
-  <span class="animated-text">r</span>
-  <span class="animated-text"> </span>
-  <span class="animated-text">!</span>
+<div class="container">
+  <span class="text">Welcom to Dreamaker !</span>
 </div>
-
-<script>
-  const animatedTexts = document.querySelectorAll('.animated-text');
-
-  animatedTexts.forEach(text => {
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    const endX = (window.innerWidth / 2) - text.offsetWidth / 2;
-    const endY = (window.innerHeight / 2) - text.offsetHeight / 2;
-
-    text.style.transform = `translate(${startX}px, ${startY}px)`;
-
-    setTimeout(() => {
-      text.style.opacity = 1;
-      text.style.transition = 'transform 1s ease, opacity 1s ease';
-      text.style.transform = `translate(${endX}px, ${endY}px)`;
-    }, 100);
-  });
-</script>
 </body>
 </html>
