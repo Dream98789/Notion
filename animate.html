@@ -31,29 +31,26 @@
   @keyframes move {
     0% {
       opacity: 0;
-      transform: translateY(-50vh) translateX(-50%);
     }
     100% {
       opacity: 1;
-      transform: translateY(0) translateX(-50%);
     }
   }
 
   .char {
     display: inline-block;
-    animation: explode 1s ease-in-out forwards;
     opacity: 0;
-    transform: translateY(0);
+    animation: flyIn 1.5s ease-in-out forwards;
   }
 
-  @keyframes explode {
+  @keyframes flyIn {
     0% {
       opacity: 0;
-      transform: translateY(-200%);
+      transform: translateX(-500px) translateY(-500px) rotate(-720deg);
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0) translateY(0) rotate(0);
     }
   }
 </style>
