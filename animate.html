@@ -39,7 +39,19 @@
     z-index: 1;
     margin-top: 100px;
 }
+@keyframes rotateInDownLeft {
+    from {
+        transform-origin: left bottom;
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
 
+    to {
+        transform-origin: left bottom;
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
 @keyframes changeBackground {
     0%, 5% {
         background-color: #990000; /* 深紅色 */
