@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>華麗動畫網頁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden; /* 防止水平滾動 */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            width: 100%;
+            margin-top: 80px; /* 將內容下移以避免被 header 覆蓋 */
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            animation: fadeInDown 1s ease;
+        }
+        p {
+            font-size: 1.5rem;
+            animation: slideInLeft 1s ease;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Awesome Website</h1>
+    </header>
+    <div class="container">
+        <h2>Discover the Magic</h2>
+        <p>Explore the wonders of our website with mesmerizing animations.</p>
+    </div>
+    <script>
+        // 改變標題動畫
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = '#555'; // 捲動時改變背景顏色
+            } else {
+                header.style.backgroundColor = '#333'; // 捲回頂部時還原背景顏色
+            }
+        });
+    </script>
+</body>
+</html>
