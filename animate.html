@@ -39,6 +39,37 @@
     z-index: 1;
     margin-top: 100px;
 }
+  .raindrops {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.drop {
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    background-color: #00f;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
 @keyframes rotateInDownLeft {
             from {
                 opacity: 0;
@@ -108,6 +139,24 @@
 </style>
 </head>
 <body>
+<div class="raindrops"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    createRaindrops();
+});
+
+function createRaindrops() {
+    const raindropsContainer = document.querySelector('.raindrops');
+
+    for (let i = 0; i < 50; i++) { // 控制水滴數量
+        const drop = document.createElement('div');
+        drop.classList.add('drop');
+        drop.style.left = Math.random() * window.innerWidth + 'px';
+        drop.style.animationDuration = Math.random() * 1 + 1 + 's'; // 控制下落速度
+        raindropsContainer.appendChild(drop);
+    }
+}
+</script>
 <div class="container">
 <div class="circle"></div>
 <div class="animated-text">Welcome to Dreamaker !!</div>
