@@ -67,7 +67,7 @@ h2 {
         opacity: 0.6;
     }
     100% {
-        transform: translateY(100vh);
+        transform: translateY(calc(100vh - 50px)); /* 调整为使雨滴在视口底部停止 */
         opacity: 0;
     }
 }
