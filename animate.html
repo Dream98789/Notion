@@ -7,8 +7,7 @@
 <style>
   body {
     margin: 0;
-    background: linear-gradient(to right, red, orange, green, blue, indigo, violet);
-    animation: rainbow 10s linear infinite alternate;
+    overflow: hidden;
   }
 
   .animated-text {
@@ -17,12 +16,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 200%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
   }
 
   .animated-text span {
     display: inline-block;
-    animation: swing 2s infinite alternate;
-    transform-origin: center;
+    animation: gather 2s ease-in-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes gather {
+    0% { transform: translate(-100vw, -100vh); opacity: 0; }
+    100% { transform: translate(0, 0); opacity: 1; }
   }
 
   @keyframes rainbow {
@@ -30,9 +40,9 @@
     100% { background-position: 100% 50%; }
   }
 
-  @keyframes swing {
-    0% { transform: rotateZ(3deg); }
-    100% { transform: rotateZ(-3deg); }
+  body {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    animation: rainbow 10s linear infinite alternate;
   }
 </style>
 </head>
