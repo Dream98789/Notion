@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Text Animation</title>
+<title>Welcome to Dreamaker</title>
 <style>
   body {
     margin: 0;
@@ -12,75 +12,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #333; /* 更改背景顏色 */
+    color: #fff; /* 更改文字顏色 */
     overflow: hidden;
-  }
-
-  .container {
-    position: relative;
-    text-align: center;
-    font-size: 36px;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
   }
 
   .text {
-    position: relative;
     opacity: 0;
-    animation: move 2s ease forwards;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   @keyframes move {
     0% {
-      opacity: 0;
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(180deg);
     }
     100% {
-      opacity: 1;
-    }
-  }
-
-  .char {
-    display: inline-block;
-    opacity: 0;
-    animation: flyIn 1.5s ease-in-out forwards;
-  }
-
-  @keyframes flyIn {
-    0% {
-      opacity: 0;
-      transform: translateX(-500px) translateY(-500px) rotate(-720deg);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) translateY(0) rotate(0);
+      transform: translate(-50%, -50%) rotate(0deg);
     }
   }
 </style>
 </head>
 <body>
-<div class="container">
-  <span class="text">
-    <span class="char">W</span>
-    <span class="char">e</span>
-    <span class="char">l</span>
-    <span class="char">c</span>
-    <span class="char">o</span>
-    <span class="char">m</span>
-    <span class="char">e</span>
-    <span class="char">&nbsp;</span>
-    <span class="char">t</span>
-    <span class="char">o</span>
-    <span class="char">&nbsp;</span>
-    <span class="char">D</span>
-    <span class="char">r</span>
-    <span class="char">e</span>
-    <span class="char">a</span>
-    <span class="char">m</span>
-    <span class="char">a</span>
-    <span class="char">k</span>
-    <span class="char">e</span>
-    <span class="char">r</span>
-    <span class="char">&nbsp;</span>
-    <span class="char">!</span>
-  </span>
+<div class="text" style="animation: move 3s ease-in-out infinite;">
+  Welcome to Dreamaker
 </div>
 </body>
 </html>
