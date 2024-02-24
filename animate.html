@@ -13,6 +13,18 @@
     align-items: center;
     animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
   }  
+  .circle {
+            width: 450px;
+            height: 450px;
+            background-color: #ffc0cb;
+            border-radius: 50%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite alternate;
+            z-index: -1;
+        }
  @keyframes changeBackground {
     0%, 5% {
         background-color: #990000; /* 深紅色 */
