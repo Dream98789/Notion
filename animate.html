@@ -7,15 +7,8 @@
 <style>
   body {
     margin: 0;
-    padding: 0;
-    /* 移除 overflow: hidden; */
     background: linear-gradient(to right, red, orange, green, blue, indigo, violet);
     animation: rainbow 10s linear infinite alternate;
-  }
-
-  @keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
   }
 
   .animated-text {
@@ -23,106 +16,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 200%;
   }
 
-  .animated-text span:nth-child(1) { animation: gather1 2s ease-in-out forwards; }
-  .animated-text span:nth-child(2) { animation: gather2 2s ease-in-out forwards; }
-  .animated-text span:nth-child(3) { animation: gather3 2s ease-in-out forwards; }
-  .animated-text span:nth-child(4) { animation: gather4 2s ease-in-out forwards; }
-  .animated-text span:nth-child(5) { animation: gather5 2s ease-in-out forwards; }
-  .animated-text span:nth-child(6) { animation: gather6 2s ease-in-out forwards; }
-  .animated-text span:nth-child(7) { animation: gather7 2s ease-in-out forwards; }
-  .animated-text span:nth-child(8) { animation: gather8 2s ease-in-out forwards; }
-  .animated-text span:nth-child(9) { animation: gather9 2s ease-in-out forwards; }
-  .animated-text span:nth-child(10) { animation: gather10 2s ease-in-out forwards; }
-  .animated-text span:nth-child(11) { animation: gather11 2s ease-in-out forwards; }
-  .animated-text span:nth-child(12) { animation: gather12 2s ease-in-out forwards; }
-  .animated-text span:nth-child(13) { animation: gather13 2s ease-in-out forwards; }
-  .animated-text span:nth-child(14) { animation: gather14 2s ease-in-out forwards; }
-  .animated-text span:nth-child(15) { animation: gather15 2s ease-in-out forwards; }
-  .animated-text span:nth-child(16) { animation: gather16 2s ease-in-out forwards; }
-  .animated-text span:nth-child(17) { animation: gather17 2s ease-in-out forwards; }
-  .animated-text span:nth-child(18) { animation: gather18 2s ease-in-out forwards; }
-  .animated-text span:nth-child(19) { animation: gather19 2s ease-in-out forwards; }
-  .animated-text span:nth-child(20) { animation: gather20 2s ease-in-out forwards; }
-  .animated-text span:nth-child(21) { animation: gather21 2s ease-in-out forwards; }
-  .animated-text span:nth-child(22) { animation: gather22 2s ease-in-out forwards; }
-  .animated-text span:nth-child(23) { animation: gather23 2s ease-in-out forwards; }
-  .animated-text span:nth-child(24) { animation: gather24 2s ease-in-out forwards; }
-  .animated-text span:nth-child(25) { animation: gather25 2s ease-in-out forwards; }
-  .animated-text span:nth-child(26) { animation: gather26 2s ease-in-out forwards; }
-
-  @keyframes gather1 { 0% { transform: translateX(-100vw) translateY(-100vh); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather2 { 0% { transform: translateX(100vw) translateY(-100vh); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather3 { 0% { transform: translateX(-100vw) translateY(100vh); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather4 { 0% { transform: translateX(100vw) translateY(100vh); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather5 { 0% { transform: translateX(-100vw) translateY(0); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather6 { 0% { transform: translateX(100vw) translateY(0); opacity: 0; } 100% { transform: translateX(0) translateY(0); opacity: 1; } }
-  @keyframes gather7 { 0% { transform: translateY(-100vh) translateX(0); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather8 { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather9 { 0% { transform: translateY(-100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather10 { 0% { transform: translateY(-100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather11 { 0% { transform: translateY(100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather12 { 0% { transform: translateY(100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather13 { 0% { transform: translateY(0) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather14 { 0% { transform: translateY(0) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather15 { 0% { transform: translateY(-100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather16 { 0% { transform: translateY(-100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather17 { 0% { transform: translateY(100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather18 { 0% { transform: translateY(100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather19 { 0% { transform: translateY(0) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather20 { 0% { transform: translateY(0) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather21 { 0% { transform: translateY(-100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather22 { 0% { transform: translateY(-100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather23 { 0% { transform: translateY(100vh) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather24 { 0% { transform: translateY(100vh) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather25 { 0% { transform: translateY(0) translateX(-100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-  @keyframes gather26 { 0% { transform: translateY(0) translateX(100vw); opacity: 0; } 100% { transform: translateY(0) translateX(0); opacity: 1; } }
-
-  .swing {
-    font-size: 200%;
+  .animated-text span {
+    display: inline-block;
     animation: swing 2s infinite alternate;
     transform-origin: center;
-    display: inline-block;
+  }
+
+  @keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
   }
 
   @keyframes swing {
-    0% {
-      transform: rotateZ(3deg);
-    }
-    100% {
-      transform: rotateZ(-3deg);
-    }
+    0% { transform: rotateZ(3deg); }
+    100% { transform: rotateZ(-3deg); }
   }
 </style>
 </head>
 <body>
   <div class="animated-text">
-    <span class="swing">W</span>
-    <span class="swing">e</span>
-    <span class="swing">l</span>
-    <span class="swing">c</span>
-    <span class="swing">o</span>
-    <span class="swing">m</span>
-    <span class="swing">e</span>
-    <br>
-    <span class="swing"> </span>
-    <span class="swing">t</span>
-    <span class="swing">o</span>
-    <span class="swing"> </span>
-    <br>
-    <span class="swing">D</span>
-    <span class="swing">r</span>
-    <span class="swing">e</span>
-    <span class="swing">a</span>
-    <span class="swing">m</span>
-    <span class="swing">a</span>
-    <span class="swing">k</span>
-    <span class="swing">e</span>
-    <span class="swing">r</span>
-    <span class="swing"> </span>
-    <span class="swing">!</span>
+    <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span><br>
+    <span>t</span><span>o</span><br>
+    <span>D</span><span>r</span><span>e</span><span>a</span><span>m</span><span>a</span><span>k</span><span>e</span><span>r</span><span>!</span>
   </div>
 </body>
 </html>
-
