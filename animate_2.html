@@ -9,11 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            overflow-x: hidden; /* 防止水平滾動 */
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
         }
         header {
-            background-color: #333;
+            background-color: transparent;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -25,16 +26,30 @@
         }
         .container {
             width: 100%;
-            margin-top: 80px; /* 將內容下移以避免被 header 覆蓋 */
+            margin-top: 100vh;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 6rem;
             animation: fadeInDown 1s ease;
         }
         p {
-            font-size: 1.5rem;
-            animation: slideInLeft 1s ease;
+            font-size: 2rem;
+            animation: slideInUp 1s ease;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #ff7f50;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite alternate;
+            z-index: -1;
         }
         @keyframes fadeInDown {
             from {
@@ -46,14 +61,22 @@
                 transform: translateY(0);
             }
         }
-        @keyframes slideInLeft {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
             }
         }
     </style>
@@ -63,6 +86,7 @@
         <h1>Welcome to Awesome Website</h1>
     </header>
     <div class="container">
+        <div class="circle"></div>
         <h2>Discover the Magic</h2>
         <p>Explore the wonders of our website with mesmerizing animations.</p>
     </div>
@@ -71,9 +95,9 @@
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header.style.backgroundColor = '#555'; // 捲動時改變背景顏色
+                header.style.backgroundColor = '#000'; // 捲動時改變背景顏色
             } else {
-                header.style.backgroundColor = '#333'; // 捲回頂部時還原背景顏色
+                header.style.backgroundColor = 'transparent'; // 捲回頂部時還原背景顏色
             }
         });
     </script>
