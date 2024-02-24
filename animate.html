@@ -18,28 +18,30 @@
     height: 220px;
     background-color: #000000;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
+    position: relative; /* 將 .circle 元素設置為相對定位 */
+    top: 200px; /* 使用 top 屬性調整 .circle 元素的垂直位置 */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     animation: pulse 2s infinite alternate;
     z-index: -1;
-    margin-top: 200px;
 }
-   h2 {
-        font-size: 3rem; /* 調整文字大小為 3 倍的根元素字體大小 */
-        color: #fff;
-        margin-left: 200px;
-        margin-top: 200px;
-        animation: rotateInDownLeft 1s;
-        }
+
+h2 {
+    font-size: 3rem; /* 調整文字大小為 3 倍的根元素字體大小 */
+    color: #fff;
+    margin-left: 200px;
+    margin-top: 200px;
+    animation: rotateInDownLeft 1s;
+}
+
 .container {
     text-align: center;
     position: relative;
     z-index: 1;
     margin-top: 100px;
 }
-  .raindrops {
+
+.raindrops {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -70,16 +72,18 @@
         opacity: 0;
     }
 }
+
 @keyframes rotateInDownLeft {
-            from {
-                opacity: 0;
-                transform: rotate3d(0, 1, 0, -100deg) translate3d(-100%, 0, 0);
-            }
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
+    from {
+        opacity: 0;
+        transform: rotate3d(0, 1, 0, -100deg) translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @keyframes changeBackground {
     0%, 5% {
         background-color: #990000; /* 深紅色 */
