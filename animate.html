@@ -23,6 +23,11 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
+    transition: transform 0.3s ease; /* 添加默认的缩放动画 */
+}
+  .circle:hover {
+    transform: scale(10); /* 当鼠标悬停时进行放大 */
+}
 }
 
 h2 {
