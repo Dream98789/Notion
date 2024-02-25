@@ -38,7 +38,7 @@
   .circle:hover {
     transform: scale(10); /* 当鼠标悬停时进行放大 */
 }
-}
+
 
 h2 {
     position: absolute;
@@ -75,12 +75,12 @@ h2 {
     animation: fall 2s linear infinite;
 }
   #app {
-      position: relative;
-      height: 100vh;
-      width: 100wh;
-      overflow: hidden;
-      background: #000;
-    }
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: transparent; /* Set the background as transparent */
+}
 
     .star {
       position: absolute;
@@ -198,18 +198,6 @@ function createRaindrops() {
         raindropsContainer.appendChild(drop);
     }
 }
-</script>
-<div class="container">
-<div class="circle"></div>
-  <div class="circle" onclick="redirectToURL('https://www.notion.so/Dreamaker-63aad5828e53415099a457e11232be79')"></div> 
-<div class="animated-text">Welcome to Dreamaker !!</div>
-<h2 class="h2">Discover the Magic</h2>
-
-   <!-- 嵌入播放器的容器 -->
-  <div class="soundcloud-container">
-    <!-- SoundCloud 播放器 -->
-    <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-  </div>
 function getRandomColor() {
       const r = Math.floor(Math.random() * 256);
       const g = Math.floor(Math.random() * 256);
@@ -239,6 +227,19 @@ function getRandomColor() {
         }, 1000);
       }
     });
+</script>
+<div class="container">
+<div class="circle"></div>
+  <div class="circle" onclick="redirectToURL('https://www.notion.so/Dreamaker-63aad5828e53415099a457e11232be79')"></div> 
+<div class="animated-text">Welcome to Dreamaker !!</div>
+<h2 class="h2">Discover the Magic</h2>
+
+   <!-- 嵌入播放器的容器 -->
+  <div class="soundcloud-container">
+    <!-- SoundCloud 播放器 -->
+    <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  </div>
+
 <p>...</p>
 </div>
 </body>
