@@ -260,16 +260,24 @@ function getRandomColor() {
       }
     });
   
-  const text = document.querySelector("h2");
-AnimatePlus.animate({
-  elements: text,
-  duration: 2000,
-  delay: index => index * 100,
-  easing: "outQuadratic",
-  transform: [
-    "translateX(-50%) translateY(-50%) scaleX(0) scaleY(0)",
-    "none"
-  ]
+  document.addEventListener('DOMContentLoaded', function() {
+    createRaindrops();
+
+    // 新加入的动画代码
+    document.querySelectorAll("h2 span").forEach((element, index) => {
+        AnimatePlus.animate({
+            elements: element,
+            duration: 2000,
+            delay: index * 100,
+            easing: "outQuadratic",
+            transform: [
+                "translateX(-50%) translateY(-50%) scaleX(0) scaleY(0)",
+                "none"
+            ]
+        });
+    });
+    // 新加入的动画代码结束
+
 });
   
 </script>
