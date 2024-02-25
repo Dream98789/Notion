@@ -162,6 +162,9 @@ h2 {
 document.addEventListener('DOMContentLoaded', function() {
     createRaindrops();
 });
+function redirectToURL(url) {
+    window.location.href = url;
+}
 
 function createRaindrops() {
     const raindropsContainer = document.querySelector('.raindrops');
@@ -177,6 +180,7 @@ function createRaindrops() {
 </script>
 <div class="container">
 <div class="circle"></div>
+  <div class="circle" onclick="redirectToURL('https://example.com')"></div>//把圓圈點擊會跳到一個連結
 <div class="animated-text">Welcome to Dreamaker !!</div>
 <h2>Discover the Magic</h2>
    <!-- 嵌入播放器的容器 -->
