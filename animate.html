@@ -38,7 +38,7 @@
   .circle:hover {
     transform: scale(10); /* 当鼠标悬停时进行放大 */
 }
-}
+
 
 h2 {
     position: absolute;
@@ -74,6 +74,24 @@ h2 {
     opacity: 0.6;
     animation: fall 2s linear infinite;
 }
+  #app {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: transparent; /* Set the background as transparent */
+}
+
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      animation: fade 1s ease-in-out infinite;
+    }
+
+    @keyframes fade {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
 
 @keyframes fall {
     0% {
@@ -159,6 +177,7 @@ h2 {
 </style>
 </head>
 <body>
+<div id="app"></div>
 <div class="raindrops"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -179,6 +198,35 @@ function createRaindrops() {
         raindropsContainer.appendChild(drop);
     }
 }
+function getRandomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r},${g},${b})`;
+    }
+
+    const app = document.getElementById('app');
+    document.addEventListener('mousemove', function(e) {
+      for (let i = 0; i < 10; i++) {
+        const size = Math.random() * 10;
+        const star = document.createElement('div');
+        
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${e.pageY + Math.random()*20 - 10}px`; 
+        star.style.left = `${e.pageX + Math.random()*20 - 10}px`;
+        
+        // Set the random color
+        star.style.background = getRandomColor();
+
+        star.classList.add('star');
+        app.appendChild(star);
+
+        setTimeout(() => {
+          app.removeChild(star);
+        }, 1000);
+      }
+    });
 </script>
 <div class="container">
 <div class="circle"></div>
@@ -191,6 +239,7 @@ function createRaindrops() {
     <!-- SoundCloud 播放器 -->
     <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
   </div>
+
 <p>...</p>
 </div>
 </body>
