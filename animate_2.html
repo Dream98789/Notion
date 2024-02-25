@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>文字動畫</title>
+<title>Dreamaker</title>
 <style>
   body, html {
     height: 100%;
@@ -11,50 +11,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* 替換成您的背景圖片 URL */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative; /* 確保絕對定位元素相對於 body 元素 */
+    animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
   }  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(102, 0, 0, 0.5); /* 使用 RGBA 表示半透明的背景顏色 */
-    z-index: -1; /* 將模板置於背景下方 */
+   /* 嵌入播放器的容器 */
+  .soundcloud-container {
+    position: fixed;
+    top: 10px; /* 距离顶部 10px */
+    right: 10px; /* 距离右侧 10px */
+    width: 150px; /* 宽度为 150px */
+    height: 100px; /* 高度为 100px */
+    z-index: 9999; /* 确保在最顶层 */
+    overflow: hidden; /* 隐藏溢出部分 */
   }
   .circle {
     width: 220px;
     height: 220px;
     background-color: #000000;
     border-radius: 50%;
-    position: absolute;
-    top: calc(50% + 200px);
+    position: absolute; /* 将 .circle 元素的定位属性改为 absolute */
+    top: calc(50% + 200px); /* 调整 .circle 元素的垂直位置，使其与其他元素对齐 */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1; /* 調整 z-index，使其位於模板上方 */
-    transition: transform 0.3s ease;
-  }
+    z-index: -1;
+    transition: transform 0.3s ease; /* 添加默认的缩放动画 */
+}
   .circle:hover {
-    transform: scale(10);
-  }
+    transform: scale(10); /* 当鼠标悬停时进行放大 */
 }
+}
+
 h2 {
-    font-size: 3rem;
+    position: absolute;
+    z-index: 1;
+    font-size: 3rem; /* 調整文字大小為 3 倍的根元素字體大小 */
     color: #fff;
-    margin-left: 200px;
+    margin-left: 800px;
     margin-top: 200px;
-    animation: rotateInDownLeft 1s;
+    animation: rotateInDownLeft 3s;
 }
+
 .container {
     text-align: center;
     position: relative;
     z-index: 1;
     margin-top: 100px;
 }
+
 .raindrops {
     position: absolute;
     width: 100%;
@@ -62,6 +64,7 @@ h2 {
     pointer-events: none;
     z-index: 0;
 }
+
 .drop {
     position: absolute;
     width: 10px;
@@ -71,6 +74,7 @@ h2 {
     opacity: 0.6;
     animation: fall 2s linear infinite;
 }
+
 @keyframes fall {
     0% {
         transform: translateY(-10px);
@@ -80,10 +84,11 @@ h2 {
         opacity: 0.6;
     }
     100% {
-        transform: translateY(calc(100vh - 50px));
+        transform: translateY(calc(100vh - 50px)); /* 调整为使雨滴在视口底部停止 */
         opacity: 0;
     }
 }
+
 @keyframes rotateInDownLeft {
     from {
         opacity: 0;
@@ -94,41 +99,43 @@ h2 {
         transform: none;
     }
 }
+
 @keyframes changeBackground {
     0%, 5% {
-        background-color: rgba(102, 0, 0, 0.5); /* 使用 RGBA 表示半透明的背景顏色 */
+        background-color: #990000; /* 深紅色 */
     }
     10%, 15% {
-        background-color: rgba(153, 51, 0, 0.5);
+        background-color: #993300; /* 深橙色 */
     }
     20%, 25% {
-        background-color: rgba(153, 102, 0, 0.5);
+        background-color: #996600; /* 深黃色 */
     }
     30%, 35% {
-        background-color: rgba(102, 153, 0, 0.5);
+        background-color: #669900; /* 深綠色 */
     }
     40%, 45% {
-        background-color: rgba(51, 102, 0, 0.5);
+        background-color: #336600; /* 深綠色 */
     }
     50%, 55% {
-        background-color: rgba(0, 102, 0, 0.5);
+        background-color: #006600; /* 綠色 */
     }
     60%, 65% {
-        background-color: rgba(0, 51, 102, 0.5);
+        background-color: #003366; /* 深藍色 */
     }
     70%, 75% {
-        background-color: rgba(51, 0, 102, 0.5);
+        background-color: #330066; /* 深靛色 */
     }
     80%, 85% {
-        background-color: rgba(102, 0, 102, 0.5);
+        background-color: #660066; /* 深紫色 */
     }
     90%, 95% {
-        background-color: rgba(102, 0, 51, 0.5);
+        background-color: #660033; /* 深紫色 */
     }
     100% {
-        background-color: rgba(102, 0, 0, 0.5);
+        background-color: #660000; /* 深紫色 */
     }
 }
+
 .animated-text {
     font-size: 36px;
     font-weight: bold;
@@ -136,10 +143,11 @@ h2 {
     color: #fff;
     animation: animateText 1s ease-in-out infinite alternate;
     margin-left: 6px;
-    position: relative;
-    z-index: 1;
-    margin-top: 200px;
+    position: relative; /* 確保文字的 z-index 比圓圈的 z-index 更高 */
+    z-index: 1; /* 確保文字的 z-index 比圓圈的 z-index 更高 */
+    margin-top: 200px; /* 新增的屬性，將容器往下移動 100px */
 }
+
 @keyframes animateText {
     0% {
       transform: scale(1);
@@ -151,30 +159,38 @@ h2 {
 </style>
 </head>
 <body>
-<div class="overlay"></div> <!-- 透明模板 -->
 <div class="raindrops"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     createRaindrops();
 });
+function redirectToURL(url) {
+    window.location.href = url;
+}
+
 function createRaindrops() {
     const raindropsContainer = document.querySelector('.raindrops');
-    for (let i = 0; i < 50; i++) {
+
+    for (let i = 0; i < 50; i++) { // 控制水滴數量
         const drop = document.createElement('div');
         drop.classList.add('drop');
         drop.style.left = Math.random() * window.innerWidth + 'px';
-        drop.style.animationDuration = Math.random() * 1 + 1 + 's';
+        drop.style.animationDuration = Math.random() * 1 + 1 + 's'; // 控制下落速度
         raindropsContainer.appendChild(drop);
     }
 }
 </script>
 <div class="container">
 <div class="circle"></div>
+  <div class="circle" onclick="redirectToURL('https://www.notion.so/Dreamaker-63aad5828e53415099a457e11232be79')"></div> 
 <div class="animated-text">Welcome to Dreamaker !!</div>
-<h2>Discover the Magic</h2>
-<div class="soundcloud-container">
-<iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-</div>
+<h2 class="h2">Discover the Magic</h2>
+
+   <!-- 嵌入播放器的容器 -->
+  <div class="soundcloud-container">
+    <!-- SoundCloud 播放器 -->
+    <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  </div>
 <p>...</p>
 </div>
 </body>
