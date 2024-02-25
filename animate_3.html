@@ -48,7 +48,7 @@
         let tick;
 
         const {body} = document;
-        const {content} = document.querySelector("template");
+        const content = document.querySelector("template").content;
         const mobile = matchMedia("(pointer: coarse)").matches;
         const center = 20;
         const spread = 150;
