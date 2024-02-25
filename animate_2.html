@@ -12,8 +12,7 @@
     justify-content: center;
     align-items: center;
     animation: changeBackground 10s linear infinite alternate; /* 添加背景色漸變動畫 */
-  } 
-   
+  }  
    /* 嵌入播放器的容器 */
   .soundcloud-container {
     position: fixed;
@@ -38,6 +37,7 @@
 }
   .circle:hover {
     transform: scale(10); /* 当鼠标悬停时进行放大 */
+}
 }
 
 h2 {
@@ -74,16 +74,13 @@ h2 {
     opacity: 0.6;
     animation: fall 2s linear infinite;
 }
-h2 span {
-    display: inline-block;
+  #app {
+      position: relative;
+      height: 100vh;
+      width: 100wh;
+      overflow: hidden;
+      background: #000;
     }
- #app {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: transparent; /* Set the background as transparent */
-}
 
     .star {
       position: absolute;
@@ -177,38 +174,11 @@ h2 span {
       transform: scale(2);
     }
 }
-@keyframes explode {
-    0% { transform: scale(1) rotate(0); opacity: 1; }
-    50% { transform: scale(1.5) rotate(180deg); }
-    100% { transform: scale(2) rotate(360deg); opacity: 0; }
-}
 </style>
-<script src="animateplus.js"></script> 
 </head>
 <body>
 <div id="app"></div>
 <div class="raindrops"></div>
-<h2>
-    <span>D</span>
-    <span>I</span>
-    <span>S</span>
-    <span>C</span>
-    <span>O</span>
-    <span>V</span>
-    <span>E</span>
-    <span>R</span>
-
-    <span>T</span>
-    <span>H</span>
-    <span>E</span>
-
-    <span>M</span>
-    <span>A</span>
-    <span>G</span>
-    <span>I</span>
-    <span>C</span>
-</h2>
-  
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     createRaindrops();
@@ -228,6 +198,18 @@ function createRaindrops() {
         raindropsContainer.appendChild(drop);
     }
 }
+</script>
+<div class="container">
+<div class="circle"></div>
+  <div class="circle" onclick="redirectToURL('https://www.notion.so/Dreamaker-63aad5828e53415099a457e11232be79')"></div> 
+<div class="animated-text">Welcome to Dreamaker !!</div>
+<h2 class="h2">Discover the Magic</h2>
+
+   <!-- 嵌入播放器的容器 -->
+  <div class="soundcloud-container">
+    <!-- SoundCloud 播放器 -->
+    <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  </div>
 function getRandomColor() {
       const r = Math.floor(Math.random() * 256);
       const g = Math.floor(Math.random() * 256);
@@ -257,41 +239,7 @@ function getRandomColor() {
         }, 1000);
       }
     });
-  
-  
-document.addEventListener('DOMContentLoaded', function() {
-    createRaindrops();
-
-    // 新加入的动画代码
-    document.querySelectorAll("h2 span").forEach((element, index) => {
-        AnimatePlus.animate({
-            elements: element,
-            duration: 2000,
-            delay: index * 100,
-            easing: "outQuadratic",
-            transform: [
-                "translateX(-50%) translateY(-50%) scaleX(0) scaleY(0)",
-                "none"
-            ]
-        });
-    });
-    // 新加入的动画代码结束
-
-});  
-</script>
-<div class="container">
-<div class="circle"></div>
-  <div class="circle" onclick="redirectToURL('https://www.notion.so/Dreamaker-63aad5828e53415099a457e11232be79')"></div> 
-<div class="animated-text">Welcome to Dreamaker !!</div>
-
-
-   <!-- 嵌入播放器的容器 -->
-  <div class="soundcloud-container">
-    <!-- SoundCloud 播放器 -->
-    <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" autoplay=true src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1292178688&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-  </div>
-
-
+<p>...</p>
 </div>
 </body>
 </html>
