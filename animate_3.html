@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    #app {
-      position: relative;
-      height: 100vh;
-      width: 100wh;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .star {
-      position: absolute;
-      border-radius: 50%;
-      animation: fade 1s ease-in-out infinite;
-    }
-
-    @keyframes fade {
-      0% {opacity: 1;}
-      100% {opacity: 0;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animate Plus: Text</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: grid;
+            place-content: center;
+            overflow: hidden;
+            font: 500 1em/1.4 -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #2E2C33;
+            background: #FBFBFD;
+        }
+        body > * {
+            display: flex;
+        }
+        p {
+            margin-bottom: 5em;
+        }
+        span {
+            opacity: 0;
+        }
+        .space {
+            width: .25em;
+        }
+        @media (min-width: 500px) {
+            body {
+                font-size: 1.4em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="app"></div>
-
-  <script>
-    function getRandomColor() {
-      const r = Math.floor(Math.random() * 256);
-      const g = Math.floor(Math.random() * 256);
-      const b = Math.floor(Math.random() * 256);
-      return `rgb(${r},${g},${b})`;
-    }
-
-    const app = document.getElementById('app');
-    document.addEventListener('mousemove', function(e) {
-      for (let i = 0; i < 10; i++) {
-        const size = Math.random() * 10;
-        const star = document.createElement('div');
-        
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.top = `${e.pageY + Math.random()*20 - 10}px`; 
-        star.style.left = `${e.pageX + Math.random()*20 - 10}px`;
-        
-        // Set the random color
-        star.style.background = getRandomColor();
-
-        star.classList.add('star');
-        app.appendChild(star);
-
-        setTimeout(() => {
-          app.removeChild(star);
-        }, 1000);
-      }
-    });
-  </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/animateplus@2/animateplus.js"></script>
+    <script src="index.js">
+        // 你的Javascript代码将在这里
+    </script>
 </body>
 </html>
